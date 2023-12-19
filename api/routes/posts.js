@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User.js");
 const Post = require("../models/Post.js");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { MongoClient, ObjectId } = require("mongodb");
 
 /////////// Create New Post
