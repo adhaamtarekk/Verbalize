@@ -24,15 +24,20 @@ export default function Write() {
       newPost.photo = filename;
       try {
         console.log(user.username);
-        await axios.post("/upload", data);
+        await axios.post("https://verbalize.onrender.com/upload", data);
       } catch (err) {
         console.log(err);
       }
     }
     try {
       console.log(user);
-      const res = await axios.post("/posts", newPost);
-      window.location.replace("/post/" + res.data._id);
+      const res = await axios.post(
+        "https://verbalize.onrender.com/posts",
+        newPost
+      );
+      window.location.replace(
+        "https://verbalize.onrender.com/post/" + res.data._id
+      );
     } catch (err) {
       console.log(err);
     }

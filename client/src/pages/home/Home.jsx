@@ -12,7 +12,9 @@ function Home() {
 
   useEffect(() => {
     let fetchPosts = async () => {
-      let res = await axios.get("/posts" + search);
+      let res = await axios.get(
+        "https://verbalize.onrender.com/api/posts/" + search
+      );
       setPosts(res.data);
     };
     fetchPosts();

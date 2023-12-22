@@ -30,7 +30,7 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post("https://verbalize.onrender.com/upload", data);
       } catch (err) {
         console.error("err in upload");
         console.log(err);
@@ -40,7 +40,10 @@ export default function Settings() {
       console.error("err in user request");
       console.log(user._id);
       console.log(updatedUser.userId);
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axios.put(
+        "https://verbalize.onrender.com/users/" + user._id,
+        updatedUser
+      );
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
