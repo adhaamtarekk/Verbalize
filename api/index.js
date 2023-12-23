@@ -25,6 +25,7 @@ app.use(cors(corsOptions));
 //   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 //   next();
 // });
+
 dotenv.config();
 port = process.env.PORT;
 app.use("/images", express.static(path.join(__dirname, "/images")));
