@@ -23,11 +23,8 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        console.log(user.username);
         await axios.post("https://verbalize.onrender.com/api/upload", data);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     }
     try {
       console.log(user);
@@ -36,9 +33,7 @@ export default function Write() {
         newPost
       );
       window.location.replace("/post/" + res.data._id);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
   return (
     <div className="write">
