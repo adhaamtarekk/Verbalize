@@ -24,7 +24,7 @@ export default function Write() {
       newPost.photo = filename;
       try {
         console.log(user.username);
-        await axios.post("https://verbalize.onrender.com/upload", data);
+        await axios.post("https://verbalize.onrender.com/api/upload", data);
       } catch (err) {
         console.log(err);
       }
@@ -32,11 +32,11 @@ export default function Write() {
     try {
       console.log(user);
       const res = await axios.post(
-        "https://verbalize.onrender.com/posts",
+        "https://verbalize.onrender.com/api/posts",
         newPost
       );
       window.location.replace(
-        "https://verbalize.onrender.com/post/" + res.data._id
+        "https://verbalize.onrender.com/api/post/" + res.data._id
       );
     } catch (err) {
       console.log(err);

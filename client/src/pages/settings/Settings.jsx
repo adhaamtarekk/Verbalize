@@ -12,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "https://verbalize.onrender.com/images/";
+  const PF = "https://verbalize.onrender.com/api/images/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("https://verbalize.onrender.com/upload", data);
+        await axios.post("https://verbalize.onrender.com/api/upload", data);
       } catch (err) {
         console.error("err in upload");
         console.log(err);
@@ -41,7 +41,7 @@ export default function Settings() {
       console.log(user._id);
       console.log(updatedUser.userId);
       const res = await axios.put(
-        "https://verbalize.onrender.com/users/" + user._id,
+        "https://verbalize.onrender.com/api/users/" + user._id,
         updatedUser
       );
       setSuccess(true);

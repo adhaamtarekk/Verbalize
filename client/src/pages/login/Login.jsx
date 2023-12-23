@@ -14,7 +14,7 @@ export default function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        "https://verbalize.onrender.com//auth/login",
+        "https://verbalize.onrender.com/api/auth/login",
         {
           username: userRef.current.value,
           password: passwordRef.current.value,

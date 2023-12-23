@@ -9,7 +9,7 @@ export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "https://verbalize.onrender.com/images/";
+  const PF = "https://verbalize.onrender.com/api/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -18,7 +18,7 @@ export default function SinglePost() {
   useEffect(() => {
     const getPost = async () => {
       const res = await axios.get(
-        "https://verbalize.onrender.com/posts/" + path
+        "https://verbalize.onrender.com/api/posts/" + path
       );
       setPost(res.data);
       setTitle(res.data.title);
@@ -29,16 +29,19 @@ export default function SinglePost() {
 
   var handleDelete = async () => {
     try {
-      await axios.delete(`https://verbalize.onrender.com/posts/${post._id}`, {
-        data: { username: user.username },
-      });
+      await axios.delete(
+        `https://verbalize.onrender.com/api/posts/${post._id}`,
+        {
+          data: { username: user.username },
+        }
+      );
       window.location.replace("/");
     } catch (err) {}
   };
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`https://verbalize.onrender.com/posts/${post._id}`, {
+      await axios.put(`https://verbalize.onrender.com/api/posts/${post._id}`, {
         username: user.username,
         title,
         desc,

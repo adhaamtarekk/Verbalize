@@ -8,7 +8,9 @@ export default function Sidebar() {
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("https://verbalize.onrender.com/categories");
+      const res = await axios.get(
+        "https://verbalize.onrender.com/api/categories/"
+      );
       setCats(res.data);
     };
     getCats();
