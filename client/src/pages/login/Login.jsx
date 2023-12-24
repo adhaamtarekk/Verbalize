@@ -23,6 +23,7 @@ export default function Login() {
 
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       localStorage.setItem("user", JSON.stringify(res.username));
+      console.log(res.data);
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE" });
       console.error(err);

@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="header">
       <div className="headerTitles">
-        <span className="headerTitleLg">Verbalize</span>
+        <span className="headerTitleLg">Verbalizee</span>
       </div>
       <img
         className="headerImg"

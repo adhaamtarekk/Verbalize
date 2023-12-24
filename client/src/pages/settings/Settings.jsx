@@ -18,7 +18,7 @@ export default function Settings() {
     e.preventDefault();
     dispatch({ type: "UPDATE_START" });
     const updatedUser = {
-      userId: user._id,
+      userId: user.id,
       username,
       email,
       password,
@@ -37,13 +37,13 @@ export default function Settings() {
       }
     }
     try {
-      console.error("err in user request");
-      console.log(user._id);
+      console.log(user.id);
       console.log(updatedUser.userId);
       const res = await axios.put(
-        "https://verbalize.onrender.com/api/users/" + user._id,
+        "https://verbalize.onrender.com/api/users/" + user.id,
         updatedUser
       );
+
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
