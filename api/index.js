@@ -55,10 +55,10 @@ mongoose
     console.log(err);
   });
 
-app.use("/api/auth", cors(corsOptions), authRoute);
-app.use("/api/users", cors(corsOptions), usersRoute);
-app.use("/api/posts", cors(corsOptions), postsRoute);
-app.use("/api/categories", cors(corsOptions), categoryRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/users", usersRoute);
+app.use("/api/posts", postsRoute);
+app.use("/api/categories", categoryRoute);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running on port " + process.env.PORT);

@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "https://verbalize.onrender.com/api/images/";
+  const PF = "https://verbalize.onrender.com/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
