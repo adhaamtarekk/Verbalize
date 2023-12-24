@@ -13,7 +13,7 @@ const cors = require("cors");
 app.use(express.json());
 
 const corsOptions = {
-  origin: "https://6587be8338826afbe7269a2d--verbalizee.netlify.app/",
+  origin: "https://verbalizee.netlify.app/",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
